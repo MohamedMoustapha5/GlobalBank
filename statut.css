@@ -1,0 +1,177 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f0f0f0; /* Couleur de fond gris clair */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 600px;
+    padding: 15px;
+    background-color: #ffffff; /* Couleur de fond du header */
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Ombre pour le header */
+    margin-bottom: 20px; /* Marge en bas du header */
+}
+
+.header img {
+    width: 90px; /* Taille du logo */
+    height: 50px;
+}
+
+.menu-button {
+    background-color: #FF3131; /* Couleur du bouton */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 1em; /* Taille du texte du bouton */
+}
+
+.title-container {
+    background-color: #e0e0e0; /* Couleur du fond du titre */
+    width: 100%;
+    max-width: 600px;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.title-container h2 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.msg {
+    margin-bottom: 20px;
+    font-size: 1rem;
+    text-align: center;
+    color: #dd1a1a; /* Couleur du texte du message */
+    background-color: #fff; /* Fond du message */
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); /* Ombre pour le message */
+}
+
+.bar {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+    background-color: #e9ecef; /* Couleur de fond de la barre de progression */
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress {
+    height: 35px; /* Hauteur de la barre */
+    background-color: #28a745; /* Couleur verte pour la progression */
+    width: 0;
+    position: relative;
+    transition: width 0.1s; /* Transition pour l'animation */
+    animation: none; /* Pas d'animation initiale */
+}
+
+.progress-text {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    line-height: 35px; /* Centrer verticalement le texte */
+}
+.condi{
+    font-size: 1em;
+}
+
+.item {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.title {
+    font-weight: normal;
+    color: white;
+    background-color: #000;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-weight: bold;
+    color: #000;
+    background-color: #f8e1a0; /* Jaune doux */
+    padding: 5px;
+    margin: 10px 0;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between; /* Espacement entre les titres et valeurs */
+    margin: 5px 0;
+}
+
+.info-label {
+    text-align: left; /* Alignement à gauche pour les titres */
+    width: 50%; /* Largeur de l'étiquette */
+    padding-right: 10px; /* Espacement à droite */
+}
+
+.info-value {
+    text-align: right; /* Alignement à droite pour les valeurs */
+    width: 50%; /* Largeur de la valeur */
+}
+
+p {
+    margin: 5px 0;
+    font-size: 0.95rem;
+}
+
+p strong {
+    font-weight: bold; /* Met en gras le texte après les deux points */
+}
+
+.red {
+    color: red;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.01); /* Réduction de l'augmentation */
+    }
+}
+
+.pulse {
+    animation: pulse 2s infinite; /* Durée de l'animation augmentée */
+}

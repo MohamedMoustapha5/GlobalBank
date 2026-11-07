@@ -1,0 +1,535 @@
+:root {
+    color-scheme: light;
+    font-family: Inter, "Segoe UI", Arial, sans-serif;
+    color: #173a30;
+    background: #a9e3d6;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-width: 320px;
+    min-height: 100vh;
+    margin: 0;
+    padding: 28px 20px 36px;
+    background:
+        radial-gradient(ellipse at 82% 4%, rgba(255, 255, 255, 0.4), transparent 28rem),
+        linear-gradient(145deg, #bceadd, #9cddcd);
+}
+
+a {
+    color: inherit;
+}
+
+.topbar {
+    width: min(440px, 100%);
+    margin: 0 auto 18px;
+    color: #153d32;
+}
+
+.topbar-inner {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.topbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.welcome-user {
+    max-width: 200px;
+    overflow: hidden;
+    color: #245c4b;
+    font-size: 0.82rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.logout-link {
+    min-height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 14px;
+    border: 1px solid rgba(7, 92, 71, 0.15);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.58);
+    color: #15533f;
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.logout-link:hover,
+.logout-link:focus-visible {
+    background: #fff;
+    box-shadow: 0 4px 14px rgba(13, 87, 67, 0.12);
+}
+
+.dashboard {
+    width: min(440px, 100%);
+    margin: 0 auto;
+}
+
+.welcome-panel {
+    position: relative;
+    min-height: 285px;
+    overflow: hidden;
+    padding: 34px 32px 64px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 27px 27px 0 0;
+    background:
+        radial-gradient(circle at 100% 0, rgba(62, 165, 126, 0.3), transparent 48%),
+        linear-gradient(145deg, #087252 0%, #075b47 58%, #064d3e 100%);
+    color: #fff;
+    box-shadow: 0 20px 42px rgba(5, 76, 57, 0.2);
+}
+
+.welcome-panel::after {
+    position: absolute;
+    right: -88px;
+    bottom: -180px;
+    width: 320px;
+    height: 320px;
+    border: 1px solid rgba(207, 255, 235, 0.14);
+    border-radius: 50%;
+    content: "";
+    box-shadow: 0 0 0 32px rgba(207, 255, 235, 0.045), 0 0 0 68px rgba(207, 255, 235, 0.025);
+    pointer-events: none;
+}
+
+.welcome-copy {
+    position: relative;
+    z-index: 1;
+}
+
+.eyebrow {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: #a9edc9;
+    font-size: 0.69rem;
+    font-weight: 750;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+}
+
+.welcome-panel h1 {
+    margin: 0;
+    color: #fff;
+    font-size: clamp(2.15rem, 8vw, 2.8rem);
+    font-weight: 700;
+    letter-spacing: -0.045em;
+    line-height: 1.08;
+    overflow-wrap: anywhere;
+}
+
+.welcome-panel p {
+    max-width: 320px;
+    margin: 13px 0 0;
+    color: rgba(239, 255, 248, 0.78);
+    font-size: 0.94rem;
+    line-height: 1.6;
+}
+
+.welcome-mark {
+    position: absolute;
+    z-index: 1;
+    top: 26px;
+    right: 27px;
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    color: #c1f3db;
+}
+
+.welcome-mark svg {
+    width: 24px;
+    height: 24px;
+}
+
+.services-section {
+    position: relative;
+    z-index: 2;
+    margin: -38px 0 0;
+    padding: 26px 24px 24px;
+    border: 1px solid rgba(24, 78, 60, 0.09);
+    border-radius: 25px;
+    background: #fff;
+    box-shadow: 0 17px 38px rgba(17, 79, 59, 0.12);
+}
+
+.section-heading {
+    margin: 0 0 20px;
+}
+
+.section-heading .eyebrow {
+    margin-bottom: 5px;
+    color: #268064;
+    font-size: 0.65rem;
+}
+
+.section-heading h2 {
+    margin: 0;
+    color: #14251f;
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+}
+
+.section-heading > p {
+    margin: 6px 0 0;
+    color: #728078;
+    font-size: 0.81rem;
+    line-height: 1.5;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.service-card {
+    position: relative;
+    min-width: 0;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 13px 8px 11px;
+    border: 1px solid #e8f0ec;
+    border-radius: 17px;
+    background: #fff;
+    color: #183a30;
+    text-align: center;
+    text-decoration: none;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.service-card:hover,
+.service-card:focus-visible {
+    transform: translateY(-2px);
+    border-color: rgba(21, 129, 95, 0.32);
+    box-shadow: 0 8px 20px rgba(19, 73, 56, 0.09);
+    text-decoration: none;
+}
+
+.service-card:focus-visible,
+.logout-link:focus-visible {
+    outline: 3px solid rgba(21, 129, 95, 0.34);
+    outline-offset: 3px;
+}
+
+.service-icon {
+    width: 44px;
+    height: 44px;
+    display: grid;
+    flex: 0 0 auto;
+    place-items: center;
+    margin-bottom: 9px;
+    border-radius: 50%;
+    background: #e6f5ee;
+    color: #076047;
+}
+
+.service-icon svg {
+    width: 22px;
+    height: 22px;
+}
+
+.service-title {
+    color: #1b3028;
+    font-size: 0.78rem;
+    font-weight: 750;
+    line-height: 1.3;
+}
+
+.service-description {
+    margin-top: 5px;
+    color: #75827b;
+    font-size: 0.67rem;
+    line-height: 1.38;
+}
+
+.service-arrow {
+    position: absolute;
+    top: 8px;
+    right: 9px;
+    color: #9baa9f;
+    font-size: 0.88rem;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.service-card:hover .service-arrow,
+.service-card:focus-visible .service-arrow {
+    transform: translate(1px, -1px);
+    color: #087252;
+}
+
+.dashboard-footer {
+    margin: 18px 4px 0;
+    color: rgba(23, 71, 56, 0.76);
+    font-size: 0.76rem;
+    line-height: 1.5;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .welcome-user {
+        display: none;
+    }
+}
+
+@media (max-width: 380px) {
+    body {
+        padding: 20px 14px 28px;
+    }
+
+    .topbar-inner {
+        gap: 8px;
+    }
+
+    .topbar-actions {
+        gap: 7px;
+    }
+
+    .logout-link {
+        min-height: 34px;
+        padding: 0 10px;
+        font-size: 0.76rem;
+    }
+
+    .welcome-panel {
+        min-height: 260px;
+        padding: 30px 24px 58px;
+    }
+
+    .welcome-mark {
+        top: 19px;
+        right: 18px;
+    }
+
+    .welcome-panel h1 {
+        max-width: 270px;
+        font-size: 2.1rem;
+    }
+
+    .services-section {
+        padding: 23px 15px 18px;
+    }
+
+    .service-grid {
+        gap: 7px;
+    }
+
+    .service-card {
+        min-height: 146px;
+        padding: 12px 5px 9px;
+        border-radius: 15px;
+    }
+
+    .service-title {
+        font-size: 0.72rem;
+    }
+
+    .service-description {
+        font-size: 0.62rem;
+    }
+}
+
+@media (min-width: 761px) {
+    body {
+        padding: 0 0 40px;
+    }
+
+    .topbar {
+        width: 100%;
+        margin: 0 0 28px;
+        padding: 8px 0;
+        border-bottom: 1px solid rgba(15, 92, 70, 0.1);
+        background: rgba(255, 255, 255, 0.24);
+    }
+
+    .topbar-inner {
+        width: min(1480px, calc(100% - 80px));
+        min-height: 54px;
+        justify-content: flex-end;
+    }
+
+    .welcome-user {
+        max-width: none;
+        font-size: 0.92rem;
+    }
+
+    .logout-link {
+        min-height: 42px;
+        padding: 0 20px;
+        font-size: 0.9rem;
+    }
+
+    .dashboard {
+        width: min(1480px, calc(100% - 80px));
+        padding-top: 0;
+    }
+
+    .welcome-panel {
+        min-height: clamp(350px, 44vh, 500px);
+        padding: clamp(52px, 6vw, 90px) clamp(48px, 8vw, 132px) 112px;
+        border-radius: 32px 32px 0 0;
+    }
+
+    .welcome-panel h1 {
+        max-width: 980px;
+        font-size: clamp(3.2rem, 5.2vw, 5.6rem);
+    }
+
+    .welcome-panel p {
+        max-width: 680px;
+        font-size: clamp(1.08rem, 1.4vw, 1.25rem);
+    }
+
+    .welcome-mark {
+        top: clamp(44px, 6vw, 88px);
+        right: clamp(48px, 8vw, 132px);
+        width: 68px;
+        height: 68px;
+    }
+
+    .welcome-mark svg {
+        width: 34px;
+        height: 34px;
+    }
+
+    .services-section {
+        margin: -68px clamp(32px, 5vw, 82px) 0;
+        padding: clamp(32px, 4vw, 58px);
+        border-radius: 30px;
+    }
+
+    .section-heading {
+        margin-bottom: 30px;
+    }
+
+    .section-heading .eyebrow {
+        font-size: 0.72rem;
+    }
+
+    .section-heading h2 {
+        font-size: clamp(1.7rem, 2.4vw, 2.25rem);
+    }
+
+    .section-heading > p {
+        font-size: 1rem;
+    }
+
+    .service-grid {
+        gap: clamp(16px, 2vw, 26px);
+    }
+
+    .service-card {
+        min-height: 228px;
+        align-items: flex-start;
+        padding: clamp(24px, 3vw, 38px);
+        border-radius: 22px;
+        text-align: left;
+    }
+
+    .service-icon {
+        width: 56px;
+        height: 56px;
+        margin-bottom: 20px;
+    }
+
+    .service-icon svg {
+        width: 27px;
+        height: 27px;
+    }
+
+    .service-title {
+        font-size: clamp(1rem, 1.35vw, 1.2rem);
+    }
+
+    .service-description {
+        max-width: 360px;
+        margin-top: 9px;
+        font-size: clamp(0.86rem, 1vw, 0.98rem);
+        line-height: 1.55;
+    }
+
+    .service-arrow {
+        top: 24px;
+        right: 24px;
+        font-size: 1.1rem;
+    }
+
+    .dashboard-footer {
+        margin: 26px clamp(36px, 5.5vw, 90px) 0;
+        font-size: 0.9rem;
+        text-align: left;
+    }
+}
+
+@media (max-width: 760px) {
+    .service-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .service-card {
+        min-height: 92px;
+        display: grid;
+        grid-template-columns: 48px minmax(0, 1fr) 24px;
+        column-gap: 14px;
+        align-items: center;
+        padding: 14px 16px;
+        text-align: left;
+    }
+
+    .service-icon {
+        grid-column: 1;
+        grid-row: 1 / span 2;
+        margin: 0;
+    }
+
+    .service-title {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .service-description {
+        grid-column: 2;
+        grid-row: 2;
+        margin-top: 4px;
+        font-size: 0.75rem;
+    }
+
+    .service-arrow {
+        position: static;
+        grid-column: 3;
+        grid-row: 1 / span 2;
+        justify-self: end;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
